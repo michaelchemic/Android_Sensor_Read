@@ -1,5 +1,6 @@
 package com.example.android_sensor_read;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private List<SensorData> sensorDataList;
     private SensorAdapter sensorAdapter;
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
             // 刷新数据
             sensorAdapter.notifyDataSetChanged();
+
         }
 
         @Override
